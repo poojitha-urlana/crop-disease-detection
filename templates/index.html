@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Disease Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="{{ url_for('static', filename='scripts.js') }}" defer></script>
+</head>
+<body>
+    <h1>Welcome to the Crop Disease Prediction App</h1>
+
+    <form action="/predict" method="POST" enctype="multipart/form-data">
+        <label for="file">Upload an image:</label>
+        <input type="file" name="image" id="file" accept="image/*" required>
+        <button type="submit">Predict Disease</button>
+    </form>
+
+    <br>
+
+    <h2>Or Capture an Image:</h2>
+    <form action="/capture" method="GET">
+        <button type="submit">Capture from Camera</button>
+    </form>
+
+    <div id="result"></div>
+</body>
+</html>
