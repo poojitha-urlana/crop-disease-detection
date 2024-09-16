@@ -4,9 +4,12 @@ from tensorflow.keras.preprocessing.image import img_to_array
 from PIL import Image
 import numpy as np
 import io
-import cv2  # Import OpenCV for capturing images
+from flask_cors import CORS  # Import CORS
 
 app = Flask(__name__)
+
+# Enable CORS for all routes
+CORS(app)
 
 # Load the trained model
 model = load_model('model/train_model.keras')
